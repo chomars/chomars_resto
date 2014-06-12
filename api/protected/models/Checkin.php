@@ -1,5 +1,5 @@
 <?php
-class Resto extends CActiveRecord{
+class Checkin extends CActiveRecord{
 	public $connection;
 	function __construct(){
 
@@ -13,19 +13,19 @@ class Resto extends CActiveRecord{
 
 	public function tableName()
 	{
-		return 'resto';
+		return 'Checkin';
 	}
-	function getResto($params=array()){
+	function getCheckin($params=array()){
 			
-		$sql = "select * from v_resto_resto_branch where 1=1 ";
+		$sql = "select * from checkin where 1=1 ";
 		$sql .=' '.$params['conditions'].' '; 
-		$sql .=" order by resto_id desc ";
+		$sql .=" order by checkin_id desc ";
 		$data = $this->connection->createCommand($sql)->queryAll();
 		return $data;
 	}
 	
-	function getRowResto($id){
-		$sql = "select * from resto where id='$id'";
+	function getRowCheckin($id){
+		$sql = "select * from Checkin where id='$id'";
 		$data = $this->connection->createCommand($sql)->queryRow();
 		return $data;
 	}
@@ -43,7 +43,7 @@ class Resto extends CActiveRecord{
 	
 
 	function dataFilter($data){
-		$column = $this->connection->createCommand("SHOW COLUMNS FROM resto")->query();
+		$column = $this->connection->createCommand("SHOW COLUMNS FROM Checkin")->query();
 		
 		$Tabfields = array();
 		$DataFilter = array();

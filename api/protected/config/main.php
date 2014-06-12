@@ -46,7 +46,7 @@ return array(
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-				''=>'resto'
+				''=>'restaurant'
 			),
 		),
 		/*
@@ -57,7 +57,7 @@ return array(
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=chomars_resto',
+			'connectionString' => 'mysql:host=localhost;dbname=k6456121_resto',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
