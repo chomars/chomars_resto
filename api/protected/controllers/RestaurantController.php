@@ -2,11 +2,16 @@
 class RestaurantController extends Controller{
 
 	function actionIndex(){
+
+		$VERSION = '1.0';
 		$model = new Resto();
+		$auth = new Auth();
+		$client_code = 'clientcode';
+		//echo $auth->isAuth($client_code);
 		$dataResto = $model->getResto();
-		$var['title'] = 'Daftar Resto';
-		$var['dataResto']= $dataResto;
-		echo json_encode($dataResto);
+		$output = array("collection"=>array("versions"=>$VERSION,'items'=>$dataResto));
+
+		echo json_encode($output);
 	//	$this->render('listing',$var);
 	}
 	function actionForm(){
